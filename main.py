@@ -1,8 +1,12 @@
 import functions
 import logging
-import process_args
 from solutions.knn import knn
 
+logging.basicConfig(level=logging.info,
+        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+        datefmt='%a, %d %b %Y %H:%M:%S',
+        filename='digit_recognize.log',
+        filemode='w+')
 
 def main():
     flags = process_args.get_flags()
