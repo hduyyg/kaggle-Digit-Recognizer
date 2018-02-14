@@ -1,0 +1,62 @@
+Tue, 13 Feb 2018 09:16:38 knn.py[line:21] INFO start n_neighbors=1 cv=5
+Tue, 13 Feb 2018 09:56:11 knn.py[line:24] INFO score=0.9662380272466706
+Tue, 13 Feb 2018 09:56:11 knn.py[line:21] INFO start n_neighbors=1 cv=10
+Tue, 13 Feb 2018 10:39:37 knn.py[line:24] INFO score=0.9673808720886627
+Tue, 13 Feb 2018 10:39:37 knn.py[line:21] INFO start n_neighbors=1 cv=20
+Tue, 13 Feb 2018 11:26:47 knn.py[line:24] INFO score=0.9680952957889369
+Tue, 13 Feb 2018 11:26:47 knn.py[line:21] INFO start n_neighbors=2 cv=5
+Tue, 13 Feb 2018 12:05:00 knn.py[line:24] INFO score=0.9599525102859026
+Tue, 13 Feb 2018 12:05:00 knn.py[line:21] INFO start n_neighbors=2 cv=10
+Tue, 13 Feb 2018 12:47:40 knn.py[line:24] INFO score=0.961904848226687
+Tue, 13 Feb 2018 12:47:40 knn.py[line:21] INFO start n_neighbors=2 cv=20
+Tue, 13 Feb 2018 13:34:48 knn.py[line:24] INFO score=0.9627622569737744
+Tue, 13 Feb 2018 13:34:48 knn.py[line:21] INFO start n_neighbors=3 cv=5
+Tue, 13 Feb 2018 14:13:04 knn.py[line:24] INFO score=0.9666900598034418
+Tue, 13 Feb 2018 14:13:04 knn.py[line:21] INFO start n_neighbors=3 cv=10
+Tue, 13 Feb 2018 14:56:37 knn.py[line:24] INFO score=0.9682610038940757
+Tue, 13 Feb 2018 14:56:37 knn.py[line:21] INFO start n_neighbors=3 cv=20
+Tue, 13 Feb 2018 15:45:10 knn.py[line:24] INFO score=0.9687606498293595
+Tue, 13 Feb 2018 15:45:10 knn.py[line:21] INFO start n_neighbors=4 cv=5
+Tue, 13 Feb 2018 16:23:54 knn.py[line:24] INFO score=0.9650951643147382
+Tue, 13 Feb 2018 16:23:54 knn.py[line:21] INFO start n_neighbors=4 cv=10
+Tue, 13 Feb 2018 17:06:47 knn.py[line:24] INFO score=0.9671426525197482
+Tue, 13 Feb 2018 17:06:47 knn.py[line:21] INFO start n_neighbors=4 cv=20
+Tue, 13 Feb 2018 17:54:06 knn.py[line:24] INFO score=0.9679525752639606
+Tue, 13 Feb 2018 17:54:06 knn.py[line:21] INFO start n_neighbors=5 cv=5
+Tue, 13 Feb 2018 18:32:27 knn.py[line:24] INFO score=0.9658569700264943
+Tue, 13 Feb 2018 18:32:27 knn.py[line:21] INFO start n_neighbors=5 cv=10
+Tue, 13 Feb 2018 19:15:12 knn.py[line:24] INFO score=0.9673329307413233
+Tue, 13 Feb 2018 19:15:12 knn.py[line:21] INFO start n_neighbors=5 cv=20
+Tue, 13 Feb 2018 20:04:56 knn.py[line:24] INFO score=0.9680474516814094
+Tue, 13 Feb 2018 20:23:59 knn.py[line:21] INFO start n_neighbors=6 cv=5
+Tue, 13 Feb 2018 21:02:50 knn.py[line:24] INFO score=0.9650712328578859
+Tue, 13 Feb 2018 21:02:50 knn.py[line:21] INFO start n_neighbors=6 cv=10
+Tue, 13 Feb 2018 21:47:35 knn.py[line:24] INFO score=0.9666659858174388
+Tue, 13 Feb 2018 21:47:35 knn.py[line:21] INFO start n_neighbors=6 cv=20
+Tue, 13 Feb 2018 22:35:43 knn.py[line:24] INFO score=0.9671896829757664
+Tue, 13 Feb 2018 22:35:43 knn.py[line:21] INFO start n_neighbors=7 cv=5
+Tue, 13 Feb 2018 23:14:01 knn.py[line:24] INFO score=0.9647619584646627
+Tue, 13 Feb 2018 23:14:01 knn.py[line:21] INFO start n_neighbors=7 cv=10
+Wed, 14 Feb 2018 00:00:22 knn.py[line:24] INFO score=0.9664286779214777
+Wed, 14 Feb 2018 00:00:22 knn.py[line:21] INFO start n_neighbors=7 cv=20
+Wed, 14 Feb 2018 00:49:09 knn.py[line:24] INFO score=0.9669525401884866
+Wed, 14 Feb 2018 00:49:09 knn.py[line:21] INFO start n_neighbors=8 cv=5
+Wed, 14 Feb 2018 01:28:13 knn.py[line:24] INFO score=0.9640713516869036
+Wed, 14 Feb 2018 01:28:13 knn.py[line:21] INFO start n_neighbors=8 cv=10
+Wed, 14 Feb 2018 02:11:52 knn.py[line:24] INFO score=0.9657139329810704
+Wed, 14 Feb 2018 02:11:52 knn.py[line:21] INFO start n_neighbors=8 cv=20
+Wed, 14 Feb 2018 03:00:16 knn.py[line:24] INFO score=0.9662370515526421
+Wed, 14 Feb 2018 03:00:16 knn.py[line:21] INFO start n_neighbors=9 cv=5
+Wed, 14 Feb 2018 03:39:21 knn.py[line:24] INFO score=0.9632617626161446
+Wed, 14 Feb 2018 03:39:21 knn.py[line:21] INFO start n_neighbors=9 cv=10
+Wed, 14 Feb 2018 04:22:58 knn.py[line:24] INFO score=0.9651185979566723
+Wed, 14 Feb 2018 04:22:58 knn.py[line:21] INFO start n_neighbors=9 cv=20
+Wed, 14 Feb 2018 05:11:17 knn.py[line:24] INFO score=0.9659278770970504
+Wed, 14 Feb 2018 05:11:17 knn.py[line:21] INFO start n_neighbors=10 cv=5
+Wed, 14 Feb 2018 05:50:18 knn.py[line:24] INFO score=0.9623094184028578
+Wed, 14 Feb 2018 05:50:18 knn.py[line:21] INFO start n_neighbors=10 cv=10
+Wed, 14 Feb 2018 06:33:52 knn.py[line:24] INFO score=0.9644043175186198
+Wed, 14 Feb 2018 06:33:52 knn.py[line:21] INFO start n_neighbors=10 cv=20
+Wed, 14 Feb 2018 07:22:12 knn.py[line:24] INFO score=0.9651177614800656
+
+sure: n_neighbors = 3 
