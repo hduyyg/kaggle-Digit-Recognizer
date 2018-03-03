@@ -29,9 +29,9 @@ def get_args():
     )
     parser.add_argument(
         '-command',
-        default='predict',
-        choices=('train', 'predict'),
-        help='determine to train the model or predict the ans for solutions.'
+        default=None,
+        help=('determine the action of the excute python file.'
+            'if the value is None,do the default  action.')
     )
     args = parser.parse_args()
     return args
