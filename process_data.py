@@ -16,6 +16,19 @@ def save_csv_data_to_npy():
     logging.info('test_data.shape:{}'.format(test_data.shape))
     np.save('data/test_data.npy', test_data)
 
+
+def change_data_to_01():
+    data = np.load('data/train_data.npy')
+    data = np.array(data != np.zeros_like(data), dtype=int)
+    logging.info('start to save train_data_01!!!')
+    np.save('data/train_data_01.npy', data)
+
+    data = np.load('data/test_data.npy')
+    data = np.array(data != np.zeros_like(data), dtype=int)
+    logging.info('start to save test_data_01!!!')
+    np.save('data/test_data_01.npy', data)
+
+
 def main(args):
     command = args['command']
     eval('{}()'.format(command))
