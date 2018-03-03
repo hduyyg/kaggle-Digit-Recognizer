@@ -1,0 +1,3 @@
+Wed, 14 Feb 2018 11:58:29 knn.py[line:42] INFO start the knn!!!
+Wed, 14 Feb 2018 12:28:12 knn.py[line:27] INFO start save result to ../data/result_sklearn_knn.csv!
+Wed, 14 Feb 2018 12:28:12 knn.py[line:47] INFO complete the knn!!!
