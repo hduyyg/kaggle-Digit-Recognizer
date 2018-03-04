@@ -2,17 +2,22 @@
 
 ## introduction
 
-​	kaggle入门题目，输入数据已经处理成向量并与标签对应，据此判断新向量对应的数字。
+kaggle入门题目，输入数据已经处理成向量并与标签对应，据此判断新向量对应的数字。
 
-## development
+项目基本思路：
 
-1. 数据清洗
-   1. 二值化
-   2. 降维（去掉多余的无效信息）
+1. 在solutions中存储不同的解法，在所有解法单独实现完成之后，最终结果采用所有解法的结果来做交叉验证之后的答案，即对于某个向量的预测，采用所有解法中出现次数最多的作为结果。
+2. main.py作为项目的入口，所有程序的调用都采用 `python main.py -* *  `的形式来调用，主要是为了统一log等的设置
 
 ## milestone
 
-1. 2018-03-03 knn——0.96857
+1. 2018-03-03 score=0.96357
+
+   knn-采用二值化之后的数据，n_neighbors=3，algorithm、weights选择默认。
+
+2. 开始前 score=0.96857
+
+   knn-采用原始数据，n_neighbors=3，algorithm、weights选择默认
 
 ## reference
 
@@ -31,20 +36,3 @@
 5. <a href="http://blog.csdn.net/laozhaokun/article/details/42749233">Kaggle竞赛题目之——Digit Recognizer</a>
 
 6. <a href="http://blog.csdn.net/memoryjdch/article/details/75220498">Kaggle学习之路(二) —— Digit Recognizer之问题分析</a>
-
-## schedule
-
-1. 2018-03-03
-   1. 完成工作：
-      * 完成代码主体框架设计，包括：
-        * 使用python-argparse，读取命令行参数
-        * 配置logging，root log配置，未设计单独的logger
-        * functions函数存储常用函数
-        * pre_process预处理数据，包括将csv数据读入处理之后以npy文件存储、矩阵的二值化
-        * main.py 作为项目入口，所有的代码运行都通过`python main -* *`的形式来调用
-      * 完成knn的base版本
-   2. 下一步工作：
-      * 设计一个ML分类器的通用框架类，主要功能如下：
-        * cross_validate()：交叉验证来确定分类器对应的最佳参数，得到一个最佳分类器
-        * get_result():得到测试数据的预测值，用于提交kaggle
-      * 熟悉、了解sklear.neighbors中的knn分类器、knn回归等
