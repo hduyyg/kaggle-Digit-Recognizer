@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 import logging
 
+
 def save_csv_data_to_npy():
     data = pd.read_csv('data/train.csv')
-    train_data = data.values[0:, 1:]
+    train_data = d
+    ata.values[0:, 1:]
     train_label = data.values[0:, 0]
     logging.info('train_data.shape:{} train_label.shape:{}'.format(
         train_data.shape, train_label.shape))
