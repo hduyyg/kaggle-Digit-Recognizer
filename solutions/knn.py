@@ -1,51 +1,40 @@
 import logging
-import pandas
-import numpy
+import numpy as np
 import sklearn
-from sklearn import neighbors, cross_validation
+from sklearn.externals import joblib
 from sklearn.neighbors import KNeighborsClassifier
+import functions
 
 
-logging.basicConfig(level=logging.INFO,
-        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-        datefmt='%a, %d %b %Y %H:%M:%S',
-        filename='digit_recognize_knn.log',
-        filemode='w+')
-
-
-def get_data():
-    data = pandas.read_csv('../data/train.csv')
-    data1 = pandas.read_csv('../data/test.csv')
-
-    train_data = data.values[0:, 1:]
-    train_label = data.values[0:, 0]
-    test_data = data1.values[0:, 0:]
-    return train_data, train_label, test_data
-
-
-def save_result(data, file_name):
-    logging.info('start save result to {}!'.format(file_name))
-    info = {}
-    info['ImageId'] = [i for i in range(1, len(data) + 1)]
-    info['Label'] = data
-    data_frame = pandas.DataFrame(info)
-    data_frame.to_csv(file_name, index=False, sep=',')
-
-
-def knn_classify(trainData, trainLabel):
-    knnClf = neighbors.KNeighborsClassifier(n_neighbors=3)
-    knnClf.fit(trainData, numpy.ravel(trainLabel))  # ravel 
+def get_knn_classify(trainData, trainLabel):
+    logging.info('start get knnClf by train.')
+    knnClf = KNeighborsClassifier(n_neighbors=3)
+    knnClf.fit(trainData, np.ravel(trainLabel))  # ravel 
     return knnClf
 
 
-def main():
+def predict(train_data, train_label, test_data):
+    knn_clf = get_knn_classify(train_data, train_label)
+    joblib.dump(knn_clf, 'data/knn.m')
+    logging.info('start predict the result.')
+    test_label = knn_clf.predict(test_data)
+    functions.save_result(test_label, 'result_knn')
+
+
+def test_args(train_data, train_label):
+    pass
+
+
+def main(flags):
     logging.info('start the knn!!!')
-    trainData, trainLabel, testData = get_data()
-    knnClf = knn_classify(trainData, trainLabel)
-    testLabel = knnClf.predict(testData)
-    save_result(testLabel, '../data/result_sklearn_knn.csv')
+    train_data = np.load('data/train_data_01.npy')
+    train_label = np.load('data/train_label.npy')
+    
+    if flags['command'] == 'predict':
+        test_data = np.load('data/test_data_01.npy')
+        predict(train_data, train_label, test_data)
+    elif flags['command'] == 'test_args':
+        test_args(train_data, train_label)
+    else:
+        logging.error('no this command: {}'.format(flags['command']))
     logging.info('complete the knn!!!')
-
-
-if __name__ == '__main__':
-    main()
