@@ -68,3 +68,4 @@
 
    * [官方文档](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
    * [scikit-learn K近邻法类库使用小结](http://www.cnblogs.com/pinard/p/6065607.html)
+2. [机器学习中的归一化方法](http://blog.csdn.net/dulingtingzi/article/details/51365545)
