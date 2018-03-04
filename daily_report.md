@@ -64,4 +64,7 @@
 
 ### 3.随笔
 
-1. 速度还需要加快啊。。。
+1. KNN分类器使用说明：
+
+   * [官方文档](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
+   * [scikit-learn K近邻法类库使用小结](http://www.cnblogs.com/pinard/p/6065607.html)
