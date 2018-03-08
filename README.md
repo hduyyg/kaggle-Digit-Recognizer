@@ -11,7 +11,11 @@ kaggle入门题目，输入数据已经处理成向量并与标签对应，据�
 
 ## milestone
 
-1. 2018-03-03 score=0.96357
+1. 2018-03-08 score=0.97342
+
+   knn-采用0.5倍缩放之后，只设置n_neighbors=3，其余保持默认。
+
+2. 2018-03-03 score=0.96357
 
    knn-采用二值化之后的数据，n_neighbors=3，algorithm、weights选择默认。
 
