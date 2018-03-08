@@ -35,7 +35,7 @@ def get_args():
     )
     parser.add_argument(
         '-train_data',
-        default='train_data',
+        default=None,
         help=('the filename of train_data in data folder without suffix--.npy.'
             'Get the train_model by the train_data')
     )
