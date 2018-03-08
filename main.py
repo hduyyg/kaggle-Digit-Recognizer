@@ -6,8 +6,7 @@ from solutions import knn
 
 def main():
     args = get_args.main()
-    knn.main(args)
-    # eval('{}.main(args)'.format(args['py']))
+    eval('{}.main(args)'.format(args['py']))
 
 
 if __name__ == '__main__':
