@@ -26,15 +26,18 @@ def test_args(train_data, train_label):
 
 
 def main(flags):
-    logging.info('start the knn!!!')
-    train_data = np.load('data/train_data_01.npy')
-    train_label = np.load('data/train_label.npy')
+    if flags['train_data'] is not None:
+        logging.info('get the train model by {}'.format(flags['train_data']))
+        path_prefix = 'data/' + flags['train_data']
+        train_data = np.load(path_prefix + '.npy')
+        train_label = np.load('data/train_label.npy')
+        get_train_model(train_data, train_label, path_prefix)
     
-    if flags['command'] == 'predict':
-        test_data = np.load('data/test_data_01.npy')
-        predict(train_data, train_label, test_data)
-    elif flags['command'] == 'test_args':
-        test_args(train_data, train_label)
-    else:
-        logging.error('no this command: {}'.format(flags['command']))
-    logging.info('complete the knn!!!')
+    if flags['test_data'] is not None:
+        if flags['train_model'] is None:
+            logging.error('please add the train_model argument to predict.')
+            return
+        model = joblib.load('data/' + flags['train_model'])
+        result_name = 'data/' + flags['train_model'] + '_result'
+        test_data = np.load('data/' + flags['test_data'] + '.npy')
+        predict(test_data, model, result_name)
