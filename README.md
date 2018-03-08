@@ -19,6 +19,16 @@ kaggle入门题目，输入数据已经处理成向量并与标签对应，据�
 
    knn-采用原始数据，n_neighbors=3，algorithm、weights选择默认
 
+## schedule
+
+1.  SVM base 版本
+
+    deadline：2018-03-09
+
+2.  深度学习 base 版本
+
+    deadline：2018-03-10
+
 ## reference
 
 1. <a href="http://blog.csdn.net/Dinosoft/article/details/50734539">[kaggle实战] Digit Recognizer -- 从KNN,LR,SVM,RF到深度学习</a>
