@@ -37,6 +37,11 @@ def get_train_model(data, label, path_prefix, flags):
         pass
 
 
+def predict(data, model, result_name, flags):
+    label = model.predict(data)
+    functions.save_result(label, result_name)
+
+
 def main(flags):
     if flags['train_data'] is not None:
         logging.info('get the train model by {}'.format(flags['train_data']))
