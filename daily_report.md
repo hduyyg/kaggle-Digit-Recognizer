@@ -1,5 +1,64 @@
 这里的内容为项目成员的日报，内容主要包括成员在项目中做的事情、学到的东西等等。
 
+# 2018-03-10
+
+## @hduyyg
+
+## 突破
+
+## 1.已完成任务
+
+1.  已完成svm的base模型，但是结果并不理想，仅仅达到0.90左右的识别率。
+
+## 2.下一步规划
+
+## 3.随笔
+
+1.  <a href="https://zhuanlan.zhihu.com/p/29667768">Kaggle 实战之数字识别 -- 新手入门SVM分类算法(Python)</a>
+
+    这篇文章，通过实际数据测试展示：需要对矩阵数据进行01二值化，否则的话效果就会比较差。
+
+    我之前每次都是0.1的正确率，我还以为是我的问题。
+
+2.   [支持向量机高斯核调参小结](http://www.cnblogs.com/pinard/p/6126077.html)
+
+# 2018-03-09
+
+## @hduyyg
+
+## 突破
+
+1.  纯knn的score达到：0.97557
+
+## 1.已完成任务
+
+1.  交叉验证确定knn分类器最佳参数
+
+    采用缩放之后的数据。
+
+    验证了knn分类器的n_neighbors(1...10)、weights(uniform or distance)。
+
+    总体来看，distance比uniform效果好一点，n_neighbors选取4效果最佳。
+
+## 2.下一步规划
+
+由于进度没有赶上，所以svm的内容顺延到03月10日，务必在今天完成svm的一下部分：
+
+1.  完成svm 的base模型
+2.  完成svm的基础理论学习
+
+## 3.随笔
+
+1.  <a href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">sklearn.neighbors.KNeighborsClassifier 官方文档</a>
+
+2.  <a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html">sklearn.model_selection.cross_val_score 交叉验证</a>
+
+3.  <a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate">sklearn.model_selection.cross_validate 官方文档</a>
+
+4.  [scikit-learn 支持向量机算法库使用小结](http://www.cnblogs.com/pinard/p/6117515.html)
+
+5.  [感知机原理小结](http://www.cnblogs.com/pinard/p/6042320.html)
+
 # 2018-03-08
 
 ## @hduyyg
@@ -118,6 +177,8 @@
 2. 完成knn的base版本-solutions/knn.py
 
    采用二值化之后的数据，n_neighbors=3，algorithm、weights选择默认，score=0.96357
+
+   这个值是比之前没有二值化的时候，要更差的。估计是因为二值化之后，使得边缘所有点权重变得一致，边缘和中心不再有区别。
 
 ### 2.下一步任务计划
 

@@ -39,4 +39,6 @@ kaggle入门题目，输入数据已经处理成向量并与标签对应，据�
 
 5. <a href="http://blog.csdn.net/laozhaokun/article/details/42749233">Kaggle竞赛题目之——Digit Recognizer</a>
 
+   这篇文章中有对数据进行分析，将矩阵以图片形式显示
+
 6. <a href="http://blog.csdn.net/memoryjdch/article/details/75220498">Kaggle学习之路(二) —— Digit Recognizer之问题分析</a>
