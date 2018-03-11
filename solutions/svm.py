@@ -2,48 +2,35 @@ import logging
 import numpy as np
 from sklearn.externals import joblib
 from sklearn import svm
-from sklearn.model_selection import cross_val_score, GridSearchCV
+from sklearn.decomposition import PCA
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+from sklearn.model_selection import cross_val_score, train_test_split
 import functions
 
 
-def get_best_train_model(data, label, flags):
-    pass
-
-
 def get_train_model(data, label, path, flags):
-    model = svm.SVC(C=20, gamma=0.5)
-    scores = cross_val_score(model, data, np.ravel(label), 
-        cv=10, scoring='accuracy')
-    score = scores.mean()
-    logging.info('svm:scores={} \nscore={}'.format(scores, score))
-    model.fit(data, label)
-    joblib.dump(model, path)
-    # best = 0
-    # for C in range(1, 100):
-    #     model = svm.SVC(C=C)
-    #     scores = cross_val_score(model, data, np.ravel(label), 
-    #         cv=10, scoring='accuracy')
-    #     score = scores.mean()
-    #     if score > best:
-    #         best = score
-    #         joblib.dump(model, path)
-    #     logging.info('svm:C={} scores={} \nscore={}'.format(
-    #         C, scores, score))
+    x_train, x_test, y_train, y_test = train_test_split(
+        data, label, test_size=0.1, random_state=42)
+    best = {'score':-1,'n_components':-1,'C':-1,'gamma':-1}
+    for n_components in range(20, 40):
+        pca_model = PCA(n_components=n_components, whiten=True)
+        pca_model.fit(x_train)
+        new_x_train = pca_model.transform(x_train)
+        new_x_test = pca_model.transform(x_test)
+        logging.info('pca-n-components:{}'.format(n_components))
 
-    #     for gamma in [0.01, 0.1, 1, 10]:
-    #         model = svm.SVC(C=C, gamma=gamma)
-    #         scores = cross_val_score(model, data, np.ravel(label), 
-    #             cv=10, scoring='accuracy')
-    #         score = scores.mean()
-    #         if score > best:
-    #             best = score
-    #             joblib.dump(model, path)
-    #         logging.info('svm:C={} scores={} \nscore={} gamma={}'.format(
-    #             C, scores, score, gamma))
-    # model = joblib.load(path)
-    # model.fit(data, label)
-    # joblib.dump(model, path)
-
+        for C in range(1, 5):
+            for gamma in [1.0/new_x_train.shape[1], 0.1, 1]:
+                svm_model = svm.SVC(C=C, gamma=gamma)
+                svm_model.fit(new_x_train, y_train)
+                score = svm_model.score(new_x_test, y_test)
+                logging.info('svm:C={} gamma:{} score={}'.format(C, gamma, score))
+                if score > best['score']:
+                    best['score'] = score
+                    best['n_components'] = n_components
+                    best['C'] = 4
+                    best['gamma'] = gamma
+    logging.info(best)
 
 
 def predict(data, model, result_name, flags):
@@ -68,6 +55,3 @@ def main(flags):
         result_name = flags['train_model'] + '_result'
         test_data = np.load('data/' + flags['test_data'] + '.npy')
         predict(test_data, model, result_name, flags)
-
-# command:
-# get_best_train_model
