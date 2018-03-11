@@ -8,7 +8,10 @@ from sklearn.model_selection import cross_val_score, train_test_split
 import functions
 
 
-def get_train_model(data, label, path, flags):
+def train_for_model(flags):   
+    data = np.load('data/' + flags['train_data'])
+    label = np.load('data/' + flags['train_label'])
+
     x_train, x_test, y_train, y_test = train_test_split(
         data, label, test_size=0.1, random_state=42)
     best = {'score':-1,'n_components':-1,'C':-1,'gamma':-1}
@@ -30,28 +33,40 @@ def get_train_model(data, label, path, flags):
                     best['n_components'] = n_components
                     best['C'] = 4
                     best['gamma'] = gamma
-    logging.info(best)
+    logging.info('best paras:{}'.format(best))
+
+    pca_model = PCA(n_components=best['n_components'], whiten=True)
+    pca_model.fit(data)
+    data = pca_model.transform(data)
+    np.save('data/train_data_resized_pca.npy', data)
+
+    test_data = np.load('data/test_data_resized.npy')
+    test_data = pca_model.transform(test_data)
+    test_data = np.save('data/test_data_resized_pca.npy', test_data)
+    
+    model = svm.SVC(C=4)
+    model.fit(data, label)
+    joblib.dump(model, 'data/svm_pca.m')
 
 
-def predict(data, model, result_name, flags):
+def predict(flags):
+    model_path = 'data/' + flags['train_model']
+    model = joblib.load(model_path)    
+    data_path = 'data/' + flags['test_data']
+    data = np.load(data_path)
     label = model.predict(data)
-    functions.save_result(label, result_name)
+    functions.save_result(label, 'xxxx')
 
 
 def main(flags):
-    if flags['train_data'] is not None:
-        logging.info('get the train model by {}'.format(flags['train_data']))
-        path_prefix = 'data/' + flags['train_data']
-        train_data = np.load(path_prefix + '.npy')
-        train_label = np.load('data/train_label.npy')
-        model_path = path_prefix + '_svm.m'
-        get_train_model(train_data, train_label, model_path, flags)
-    
-    if flags['test_data'] is not None:
-        if flags['train_model'] is None:
-            logging.error('please add the train_model argument to predict.')
-            return
-        model = joblib.load('data/' + flags['train_model'])
-        result_name = flags['train_model'] + '_result'
-        test_data = np.load('data/' + flags['test_data'] + '.npy')
-        predict(test_data, model, result_name, flags)
+    if flags['command'] == 'train':
+        train_for_model(flags)
+    elif flags['command'] == 'predict':
+        predict(flags)
+    else:
+        logging.error('illegal command!')
+
+
+# command
+# train
+# predict
