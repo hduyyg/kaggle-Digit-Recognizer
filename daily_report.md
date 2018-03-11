@@ -1,16 +1,76 @@
 这里的内容为项目成员的日报，内容主要包括成员在项目中做的事情、学到的东西等等。
 
-# 2018-03-10
+# 2018-03-11
 
 ## @hduyyg
 
 ## 突破
 
+svm+pca——score：0.98542
+
+## 1.已完成任务
+
+1.  使用PCA降维搭配svm求解，score稳定到0.98。
+
+    根据使用情况来看，当降维特征>=30时，score基本稳定在0.98附近，最终选定降维特征数35，因为后面要给svm使用，所以设置 whiten=True。
+
+    svm的惩罚系数C=4，gamma值默认。
+
+2.  PCA降维：
+
+    *   [主成分分析（PCA）原理总结](http://www.cnblogs.com/pinard/p/6239403.html)
+    *   [用scikit-learn学习主成分分析(PCA)](http://www.cnblogs.com/pinard/p/6243025.html)
+
+3.  LDA降维：
+
+    *   [线性判别分析LDA原理总结](http://www.cnblogs.com/pinard/p/6244265.html)
+    *   [用scikit-learn进行LDA降维](http://www.cnblogs.com/pinard/p/6249328.html)
+    *   LDA降维后直接套svm，效果感觉和LDA分类也没差多少，达到0.8左右的正确率。等待进一步探索LDA降维的妙用了。
+
+4.  LLE降维：
+
+    *   [局部线性嵌入(LLE)原理总结](http://www.cnblogs.com/pinard/p/6266408.html)
+
+
+    *   [用scikit-learn研究局部线性嵌入(LLE)](http://www.cnblogs.com/pinard/p/6273377.html)
+
+## 2.下一步规划
+
+1.  完成深度学习的环境搭建
+2.  完成深度学习的base模板
+
+## 3.随笔
+
+1.  [精确率与召回率，RoC曲线与PR曲线](http://www.cnblogs.com/pinard/p/5993450.html)
+2.  [详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解](http://blog.csdn.net/u011508640/article/details/72815981)
+
+# 2018-03-10
+
+## @hduyyg
+
 ## 1.已完成任务
 
 1.  已完成svm的base模型，但是结果并不理想，仅仅达到0.90左右的识别率。
 
+2.  svm的基础理论学习：
+
+    *    [支持向量机原理(一) 线性支持向量机](http://www.cnblogs.com/pinard/p/6097604.html)
+
+    *    [支持向量机原理(二) 线性支持向量机的软间隔最大化模型](http://www.cnblogs.com/pinard/p/6100722.html)
+
+         SVM调参中，C参数的含义在本文中有解释。
+
+    *    [支持向量机原理(三)线性不可分支持向量机与核函数](http://www.cnblogs.com/pinard/p/6103615.html)
+
+         svm调参中，rbf核函数的gamma参数的含义在本文中有解释，其他核函数亦然。
+
+    *    [支持向量机原理(四)SMO算法原理](http://www.cnblogs.com/pinard/p/6111471.html)
+
+    *    [支持向量机原理(五)线性支持回归](http://www.cnblogs.com/pinard/p/6113120.html)
+
 ## 2.下一步规划
+
+1.  利用PCA、LDA等降维来提高SVM的正确性
 
 ## 3.随笔
 
