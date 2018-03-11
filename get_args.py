@@ -30,8 +30,33 @@ def get_args():
     parser.add_argument(
         '-command',
         default=None,
+        required=True,
         help=('determine the action of the excute python file.'
             'if the value is None,do the default  action.')
+    )
+    parser.add_argument(
+        '-train_data',
+        default='train_data_resized.npy',
+        help=('the filename of train_data in data folder without suffix--.npy.'
+            'Get the train_model by the train_data')
+    )
+    parser.add_argument(
+        '-train_label',
+        default='train_label.npy',
+        help=('the filename of train_label in data folder without suffix--.npy.'
+            'Get the train_model by the train_data')
+    )
+    parser.add_argument(
+        '-test_data',
+        default='test_data_resized.npy',
+        help=('the filename of test_data in data folder without suffix--.npy.'
+            'Get the result of test_data by an existed model.')
+    )
+    parser.add_argument(
+        '-train_model',
+        default=None,
+        help=('the filename of train_model in data folder without suffix-.npy.'
+            'Get the result of a test_data')
     )
     args = parser.parse_args()
     return args

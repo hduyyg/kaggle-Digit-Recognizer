@@ -1,13 +1,12 @@
 import logging
 import get_args
 import pre_process
-from solutions import knn
+from solutions import knn, svm
 
 
 def main():
     args = get_args.main()
-    knn.main(args)
-    # eval('{}.main(args)'.format(args['py']))
+    eval('{}.main(args)'.format(args['py']))
 
 
 if __name__ == '__main__':
