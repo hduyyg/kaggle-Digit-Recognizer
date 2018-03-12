@@ -1,5 +1,42 @@
 这里的内容为项目成员的日报，内容主要包括成员在项目中做的事情、学到的东西等等。
 
+# 2018-03-12
+
+## @hduyyg
+
+## 突破
+
+keras——score：0.99285
+
+## 1.已完成任务
+
+1.  keras + tensorflow-gpu的环境搭建
+
+    首先确定自己的电脑支持哪个版本的cuda，然后选择对应的tensorflow-cuda-cudnn组合，版本不能搞错。
+
+    参考：
+
+    *    <a href="http://blog.csdn.net/u013829973/article/details/70555037">window7（64bit）环境下安装基于TensorFlow后端的Keras 教程</a>
+    *    <a href="http://blog.csdn.net/u010099080/article/details/53418159">【TensorFlow】Windows10 64 位下安装 TensorFlow - 官方原生支持</a>
+
+    注意，tensorflow、cuda、cudnn的版本一定要对得上。
+
+2.  keras深度学习基础解法：
+
+    *   <a href="https://www.shiyanlou.com/courses/744/labs/2489/document">Keras介绍及手写体数字识别应用</a>
+    *   <a href="http://blog.csdn.net/Dinosoft/article/details/50734539">[kaggle实战] Digit Recognizer -- 从KNN,LR,SVM,RF到深度学习</a>
+    *   <a href="http://blog.csdn.net/buwei0239/article/details/78769985">kaggle-手写字体识别</a>
+
+    这里也要注意的是，keras2.0和之前在很多地方是有不一样的，具体的可看：
+
+    <a href="https://github.com/keras-team/keras/wiki/Keras-2.0-release-notes">Keras 2.0 release notes</a>
+
+## 2.下一步规划
+
+1.  整理文档，结束V1版本
+
+## 3.随笔
+
 # 2018-03-11
 
 ## @hduyyg
@@ -30,7 +67,6 @@ svm+pca——score：0.98542
 4.  LLE降维：
 
     *   [局部线性嵌入(LLE)原理总结](http://www.cnblogs.com/pinard/p/6266408.html)
-
 
     *   [用scikit-learn研究局部线性嵌入(LLE)](http://www.cnblogs.com/pinard/p/6273377.html)
 
