@@ -69,6 +69,7 @@ kaggle入门题目，输入数据已经处理成向量并与标签对应，据�
 *   数据分析，进一步减少非必要信息，例如缩放倍率、数据本身的笨些规律等等
 *   参数调试。更加细致的参数调试
 
+
 ## reference
 
 1. <a href="http://blog.csdn.net/Dinosoft/article/details/50734539">[kaggle实战] Digit Recognizer -- 从KNN,LR,SVM,RF到深度学习</a>
