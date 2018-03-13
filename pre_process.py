@@ -18,18 +18,6 @@ def save_csv_data_to_npy():
     np.save('data/test_data.npy', test_data)
 
 
-# def change_data_to_01():
-#     data = np.load('data/train_data_resized.npy')
-#     data = np.array(data != np.zeros_like(data), dtype=int)
-#     logging.info('start to save train_data_resized_01!!!')
-#     np.save('data/train_data_resized_01.npy', data)
-
-#     data = np.load('data/test_data_resized.npy')
-#     data = np.array(data != np.zeros_like(data), dtype=int)
-#     logging.info('start to save test_data_resized_01!!!')
-#     np.save('data/test_data_resized_01.npy', data)
-
-
 def resize_data():
     def process(source_path, result_path, rate=0.5):
         data = np.load(source_path)
