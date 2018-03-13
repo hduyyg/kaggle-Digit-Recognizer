@@ -1,7 +1,7 @@
 import logging
 import get_args
 import pre_process
-from solutions import knn, svm
+from solutions import knn, svm, deep
 
 
 def main():

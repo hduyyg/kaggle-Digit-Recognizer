@@ -17,17 +17,3 @@ def save_result(data, file_name):
     info['Label'] = data
     data_frame = pd.DataFrame(info)
     data_frame.to_csv(csv_path, index=False, sep=',')
-
-
-def cross_validation(matrix):
-    logging.info('start cross_validation(matrix)!!!!')
-    row_count = len(matrix)
-    col_count = len(matrix[0])
-    logging.info('row_count=%d col_count=%d' % (row_count, col_count))
-    res = [None for _ in range(col_count)]
-    tmp = [None for _ in range(row_count)]
-    for col in range(col_count):
-        for row in range(row_count):
-            tmp[row] = matrix[row][col]
-        res[col] = Counter(tmp).most_common()[0][0]
-    return res
