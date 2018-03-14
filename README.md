@@ -33,16 +33,6 @@ kaggle入门题目，训练数据已经处理成向量并与标签一一对应�
 
 # schedule
 
-## V2.0
-
-待定。
-
-优化方向：
-
--   数据分析，进一步减少非必要信息，例如缩放倍率、数据本身的笨些规律等等
--   参数调试。更加细致的参数调试
--   不同结果之间的交叉验证
-
 ## V1.0
 
 ### 起始时间：
@@ -136,3 +126,12 @@ kaggle入门题目，训练数据已经处理成向量并与标签一一对应�
     -   <a href="https://www.shiyanlou.com/courses/744/labs/2491/document">Keras搭建卷积神经网络CNN模型</a>
     -   <a href="http://blog.csdn.net/Dinosoft/article/details/50734539">[kaggle实战] Digit Recognizer -- 从KNN,LR,SVM,RF到深度学习</a>
     -   <a href="http://blog.csdn.net/buwei0239/article/details/78769985">kaggle-手写字体识别</a>
+
+# 下一版本规划
+
+版本号V2.0，3月15日正式启动，至3月31日结束。
+
+-   项目结构重新设计
+-   数据分析，进一步减少非必要信息，例如缩放倍率、数据本身的笨些规律等等
+-   参数调试。更加细致的参数调试
+-   不同结果之间的交叉验证
